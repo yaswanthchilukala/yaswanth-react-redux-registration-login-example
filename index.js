@@ -12,7 +12,7 @@ function HackerNewsPosts({ posts, comments, getcommentsFromId }) {
 
   return (
     <div>
-      <h1>HackerNews Top 10 Posts</h1>
+      <h1>Top 10 HackerNews Stories</h1>
       <ul>
         {posts.map(post => (
           <li
