@@ -123,27 +123,6 @@ function getAll() {
   }
 }
 
-// function editUser(id) {
-//   return dispatch => {
-//     //dispatch(request(id));
-
-//     userService.getById(id).then(
-//       user => {
-//         dispatch(success());
-//         //console.log('dsfsdf');
-//         // history.push('/login');
-//         // dispatch(alertActions.success('Registration successful'));
-//       },
-//       error => {
-//         console.log('error');
-
-//         // dispatch(failure(error));
-//         // dispatch(alertActions.error(error));
-//       }
-//     );
-//   };
-// }
-
 // prefixed function name with underscore because delete is a reserved word in javascript
 function _delete(id) {
   return dispatch => {
