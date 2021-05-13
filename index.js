@@ -16,18 +16,24 @@ function HackerNewsPosts({ posts, comments, getcommentsFromId }) {
       <ul>
         {posts.map(post => (
           <li
+            className="collapse-li"
             onClick={() => getcommentsFromId(post.id)}
             key={post.id}
             id={post.id}
           >
             <button href={post.url}>{post.title}</button>
+            {comments.map(comment => (
+              <li key={comment.id}>
+                <p>{comment.text}</p>
+              </li>
+            ))}
           </li>
         ))}
-        {comments.map(comment => (
+        {/* {comments.map(comment => (
           <li key={comment.id}>
             <p>{comment.text}</p>
           </li>
-        ))}
+        ))} */}
       </ul>
     </div>
   );
@@ -73,7 +79,12 @@ function App() {
 
   async function getcommentsFromId(id) {
     //alert('ssfsdf' + id);
-
+    if ($('#' + id).hasClass('active')) {
+      $('li').removeClass('active');
+      return false;
+    }
+    $('li').removeClass('active');
+    $('#' + id).addClass('active');
     const json = [id];
     const promises = json.map(id =>
       fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`).then(
