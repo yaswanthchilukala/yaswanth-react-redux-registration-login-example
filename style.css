@@ -11,7 +11,7 @@ body {
 }
 .comments_inner {
   display: none;
-  padding: 10px 10px 10px 30px;
+  padding: 10px 10px 10px 10px;
   box-shadow: 0 0 10px 0 rgb(0 0 0 / 50%);
   text-align: left;
   max-height: 300px;
