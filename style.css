@@ -6,25 +6,40 @@ body {
   text-align: center;
   margin: auto;
 }
+.comments_maindiv ul {
+  padding: 10px;
+}
 .comments_inner {
   display: none;
   padding: 10px 10px 10px 30px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px 0 rgb(0 0 0 / 50%);
   text-align: left;
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #fff;
 }
 .comments_inner p {
   border: 1px solid #999;
   padding: 10px;
+  word-break: break-all;
 }
 .collapse-li {
   list-style: none;
   margin-bottom: 10px;
+}
+.collapse-li .btn:focus {
+  border: 0;
+  box-shadow: none;
+  outline: none;
+  border-radius: 0;
 }
 .collapse-li .btn {
   border: 0;
   box-shadow: none;
   outline: none;
   border-radius: 0;
+  white-space: inherit;
 }
 .collapse-li.active .comments_inner {
   display: block;
