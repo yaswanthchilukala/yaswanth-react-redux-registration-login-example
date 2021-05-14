@@ -1,0 +1,36 @@
+body {
+  background-color: #eee;
+}
+.comments_maindiv {
+  width: 50%;
+  text-align: center;
+  margin: auto;
+}
+.comments_inner {
+  display: none;
+  padding: 10px 10px 10px 30px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  text-align: left;
+}
+.comments_inner p {
+  border: 1px solid #999;
+  padding: 10px;
+}
+.collapse-li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+.collapse-li .btn {
+  border: 0;
+  box-shadow: none;
+  outline: none;
+  border-radius: 0;
+}
+.collapse-li.active .comments_inner {
+  display: block;
+}
+@media (max-width: 1000px) {
+  .comments_maindiv {
+    width: 100%;
+  }
+}

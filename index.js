@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-//import "./styles.css";
+import './style.css';
 
 function HackerNewsPosts({ posts, comments, getcommentsFromId }) {
   if (posts.length === 0) {
@@ -11,8 +11,8 @@ function HackerNewsPosts({ posts, comments, getcommentsFromId }) {
   }
 
   return (
-    <div>
-      <h1>Top 10 HackerNews Stories</h1>
+    <div class="comments_maindiv">
+      <h2>Top 10 HackerNews Stories</h2>
       <ul>
         {posts.map(post => (
           <li
@@ -21,12 +21,16 @@ function HackerNewsPosts({ posts, comments, getcommentsFromId }) {
             key={post.id}
             id={post.id}
           >
-            <button href={post.url}>{post.title}</button>
-            {comments.map(comment => (
-              <li key={comment.id}>
-                <p>{comment.text}</p>
-              </li>
-            ))}
+            <button class="btn btn-primary btn-block" href={post.url}>
+              {post.title}
+            </button>
+            <div class="comments_inner">
+              {comments.map(comment => (
+                <li key={comment.id}>
+                  <p>{comment.text}</p>
+                </li>
+              ))}
+            </div>
           </li>
         ))}
         {/* {comments.map(comment => (
@@ -94,7 +98,7 @@ function App() {
     const result = await Promise.all(promises);
     var kidss = result[0].kids;
     const map1 = kidss
-      .slice(0, 1)
+      .slice(0, 20)
       .map(x =>
         fetch(`https://hacker-news.firebaseio.com/v0/item/${x}.json`).then(
           response => response.json()
