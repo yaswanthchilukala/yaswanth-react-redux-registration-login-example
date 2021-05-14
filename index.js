@@ -24,13 +24,15 @@ function HackerNewsPosts({ posts, comments, getcommentsFromId }) {
             <button class="btn btn-primary btn-block" href={post.url}>
               {post.title}
             </button>
-            <div class="comments_inner">
-              {comments.map(comment => (
-                <li key={comment.id}>
-                  <p>{comment.text}</p>
-                </li>
-              ))}
-            </div>
+            {comments.length > 0 ? (
+              <div class="comments_inner">
+                {comments.map(comment => (
+                  <li key={comment.id}>
+                    {comment.text ? <p>{comment.text.trim()}</p> : null}
+                  </li>
+                ))}
+              </div>
+            ) : null}
           </li>
         ))}
         {/* {comments.map(comment => (
