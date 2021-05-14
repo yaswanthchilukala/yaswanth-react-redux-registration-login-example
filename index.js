@@ -24,7 +24,7 @@ function HackerNewsPosts({ posts, comments, getcommentsFromId }) {
             <button class="btn btn-primary btn-block" href={post.url}>
               {post.title}
             </button>
-            {comments.length > 0 ? (
+            {comments.length ? (
               <div class="comments_inner">
                 {comments.map(comment => (
                   <li key={comment.id}>
